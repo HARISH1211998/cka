@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: persistentVolumeClaim
+metadata:
+  name: mysql-pvc
+spec:
+  accessMode:
+    ReadWriteOnce
+  storageClassName: Manualebs
+  resources:
+    request: 
+      storage: 20Gib

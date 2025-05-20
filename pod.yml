@@ -1,0 +1,32 @@
+apiVersion: v2
+kind: deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replica: 2
+  selector:
+    matchLabel: 
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+  spec:
+    containers:
+      - name: nginx
+        image: nginx:latest
+        ports:  
+          - containerPort: 80
+        volumeMounts:
+          - name: nginx-logs
+            mountPath: /var/log/nginx
+        env:
+          name: secretvalue
+          valueFrom:
+            secretKeyRef:
+              - name: Test
+                value: test
+        volumes:
+         - name: nginx-logs
+           persistentVolumeClaim:
+              claimName: nginx-logs-pvc

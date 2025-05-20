@@ -1,0 +1,10 @@
+apiVersion: stroage.k8.io/v1
+kind: storageClassName
+metadata:
+  name: Manualebs
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumes
+reclaims: Retain
+parameter:
+  type: gp3
+

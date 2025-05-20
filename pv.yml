@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql
+spec:
+  capacity:
+    storage: 20Gib
+  volumeMode: Filesystem
+  accessMode:
+    - ReadWriteOnce
+  persistentVolumeClaim: Retain
+  storageClassName: Manualebs
+  csi: 
+    driver: ebs.csi.aws.com
+    volumeHandler: 
+    fsType: ext4
+
+

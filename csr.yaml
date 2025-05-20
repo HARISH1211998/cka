@@ -1,0 +1,23 @@
+## cat akshay.csr | base64 -w 0
+
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: hari
+spec:
+  groups: authenticated
+  request: <base 64>
+  signerName: kubernetes.io/kube-apiserver-client
+  usages:
+  - client auth
+---
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: sankar
+spec:
+  group: authenticated
+  request: <base 64>
+  signerName: kubernetes.io/kube-apiserver-client
+  usages:
+  - client auth
