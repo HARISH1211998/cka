@@ -152,6 +152,8 @@ kubectl delete csr agent-smith
 
 ##kube config
 kubectl config view
+kubectl config use-context <use name>
+kubectl config current-context --kubeconfig my-kube-config
 
 
 
