@@ -1,8 +1,26 @@
+# Role definition
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role 
-metadata:  
-  name: developer
+kind: Role
+metadata:
+  name: developer1
+  namespace: default
 rules:
-  apiGroups: [""]
-  resources: ["pod"]
-  verbs: ["list", "create", "update"]
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["list", "create", "delete"]
+
+---
+# RoleBinding definition
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: dev-user-binding-1
+  namespace: default
+subjects:
+  - kind: User
+    name: dev-user
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: developer1
+  apiGroup: rbac.authorization.k8s.io

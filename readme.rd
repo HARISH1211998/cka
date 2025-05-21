@@ -155,5 +155,13 @@ kubectl config view
 kubectl config use-context <use name>
 kubectl config current-context --kubeconfig my-kube-config
 
+## RBAC
+k get roles
+k get rolebindings
 
+#check our permission
+kubectl auth can-i create deployment 
 
+##cluster scope
+node,pv,clusterrole,clusterrolebinding,certificateapproval,namespace
+kubectl api-resources --namespace=true
