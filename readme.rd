@@ -165,3 +165,7 @@ kubectl auth can-i create deployment
 ##cluster scope
 node,pv,clusterrole,clusterrolebinding,certificateapproval,namespace
 kubectl api-resources --namespace=true
+
+## service account
+k create serviceaccount ser-accept
+k get seviceaccount
