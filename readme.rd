@@ -169,3 +169,9 @@ kubectl api-resources --namespace=true
 ## service account
 k create serviceaccount ser-accept
 k get seviceaccount
+
+## Docker Register
+kubectl create secret docker-registry private-reg-cred --docker-username=dock_user --docker-password=dock_password --docker-server=myprivateregistry.com:5000 --docker-email=dock_user@myprivateregistry.com
+kubectl exec ubuntu-sleeper -- whoami
+  securityContext:
+    runAsUser: 1010
