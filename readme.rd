@@ -175,3 +175,35 @@ kubectl create secret docker-registry private-reg-cred --docker-username=dock_us
 kubectl exec ubuntu-sleeper -- whoami
   securityContext:
     runAsUser: 1010
+
+## Networking configuration
+Linux networking basic
+ip link -> eth0
+ip addr add
+route -> will display routing configuration
+ip route addr <cidr> via private ip address
+ip route default via 192.168.2.1
+
+# Eth0 forward the network eth1 private network connected forward into eth0 configuration
+cat /proc/sys/net/ipv4/ip_forward
+echo 1 > /proc/sys/net/ipv4/
+cat /etc/sysctl.config
+
+## list of command
+ip link -> list and modified
+ip addr
+ip addr add
+ip route
+ip route add 
+cat /etc/resolv.conf
+cat /etc/nsswitch.conf
+
+#network namespaces
+ip netns add red
+ip netns add blue
+ip netns
+ip link add veth-red type veth peer name veth-blue
+ip link set veth-red netns red
+ip link show eth0
+ip route show default
+netstat -nplt
