@@ -210,3 +210,8 @@ netstat -nplt
 ip address show type bridge
 ps -aux | grep kubelet | grep --color container-runtime-endpoint
 cat /etc/kubernetes/manifests/kube-controller-manager.yaml   | grep cluster-cidr
+
+##ingress requiredSchedulingDuringIgonedExecution
+kubectl create ingress ingress-test --rule="wear.my-online-store.com/wear*=wear-service:80"**
+Ingress controller -> nginx
+ingress resource -> kubernetes yaml files
