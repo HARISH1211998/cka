@@ -207,3 +207,6 @@ ip link set veth-red netns red
 ip link show eth0
 ip route show default
 netstat -nplt
+ip address show type bridge
+ps -aux | grep kubelet | grep --color container-runtime-endpoint
+cat /etc/kubernetes/manifests/kube-controller-manager.yaml   | grep cluster-cidr
