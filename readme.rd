@@ -215,3 +215,8 @@ cat /etc/kubernetes/manifests/kube-controller-manager.yaml   | grep cluster-cidr
 kubectl create ingress ingress-test --rule="wear.my-online-store.com/wear*=wear-service:80"**
 Ingress controller -> nginx
 ingress resource -> kubernetes yaml files
+## ingress deployment 
+kubectl create configmap ingress-nginx-controller --namespace ingress-nginx
+## ingress service account
+kubectl create serviceaccount ingress-nginx --namespace ingress-nginx
+kubectl create serviceaccount ingress-nginx-admission --namespace ingress-nginx
