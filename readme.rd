@@ -220,3 +220,9 @@ kubectl create configmap ingress-nginx-controller --namespace ingress-nginx
 ## ingress service account
 kubectl create serviceaccount ingress-nginx --namespace ingress-nginx
 kubectl create serviceaccount ingress-nginx-admission --namespace ingress-nginx
+
+## helm
+repo for helm artifacthub.io
+helm structure -> template, values.yaml.charts.yaml, charts, License 
+Under charets.yaml -> apiVersion, appVersion, type: application (which used for application) or libery (which is used for utillies)
+dependenties, home, icons, emails id
