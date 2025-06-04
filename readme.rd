@@ -227,3 +227,4 @@ helm structure -> template, values.yaml.charts.yaml, charts, License
 Under charets.yaml -> apiVersion, appVersion, type: application (which used for application) or libery (which is used for utillies)
 dependenties, home, icons, emails id
 helm pull --untar bitnami/wordpress
+helm install my-release ./wordpress
