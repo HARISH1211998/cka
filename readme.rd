@@ -228,3 +228,6 @@ Under charets.yaml -> apiVersion, appVersion, type: application (which used for 
 dependenties, home, icons, emails id
 helm pull --untar bitnami/wordpress
 helm install my-release ./wordpress
+
+## Added add 
+helm repo add bitnami https://charts.bitnami.com/bitnami
