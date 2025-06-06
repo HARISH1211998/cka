@@ -245,3 +245,14 @@ commonLabels:
   author: Harishankar
 Kustomize build <directory>
 kubectl apply -k <kustomize directory> or kustomize build <directory> | k apply -f 
+patch method -> json and strategic method 
+patches:
+  - target: 
+      kind: deployment
+      metadata:
+        name: web-deve
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 5
+
