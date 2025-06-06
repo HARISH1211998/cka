@@ -231,3 +231,17 @@ helm install my-release ./wordpress
 
 ## Added add 
 helm repo add bitnami https://charts.bitnami.com/bitnami
+helm rollback <myrelease> 3(revision)
+helm history <myrelease>
+
+##Kustomize
+It is basic yaml we can customize the yaml file for difference environment to avoid change the repeat yaml 
+create an folder kuber-kustomize(directory) below -> deployment.yaml, service.yaml any resource and much need kustomization.yaml 
+resources:
+  deployment.yaml
+  service.yaml
+commonLabels:
+  company: devops
+  author: Harishankar
+Kustomize build <directory>
+kubectl apply -k <kustomize directory> or kustomize build <directory> | k apply -f 
