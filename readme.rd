@@ -255,4 +255,29 @@ patches:
       - op: replace
         path: /spec/replicas
         value: 5
+## Json path
+Dictionary -> unorder and array is order collection
+list vs dictionary
+jsonpath condition
+cat q1.json | jpath $.property1
+last element of the list $[-1:0]
+$[?(@ > 40)], $[?(@ < 40)], $[?(@ == 40)], $[?(@ != 40)]
+k get nodes | awk '{print $1}' 
+k get node -o=jsonpath='
+{range.items[*]}
+  {.metadata.name} {"\t"}{.spec.capcity.cpu}{"\n"}
+{end}'
+k get node --sort-by=<jsonpath>
+[] -> list, {} -> dictionary
+echo "cat input.json | jpath '$.kind'" | sudo tee answer9.sh
+
+Line number replace the new and old wordpress
+sed '12s/oldword/newword/' filename
+sed 's/find/replace/' filename
+
+Count of the wordp
+grep ipaddress logs.json | wc -w
+grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' logs.json | sort | uniq -c | sort -nr
+tr -s '[:space:][:punct:]' '\n' < logs.json | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr
+
 
